@@ -94,6 +94,8 @@ Do not commit this file. It is listed in `.gitignore`.
 
 ## Usage
 
+Run `npm run ingest` before `npm run ask`. The index is generated locally and is not stored in the repository.
+
 ### 1. Add documents
 
 Put `.md` or `.txt` files into `data/documents/`.
