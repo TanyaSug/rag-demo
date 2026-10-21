@@ -6,15 +6,15 @@ The project is written without LangChain or LlamaIndex on purpose, so every step
 
 ## Status
 
-| Stage | Status |
-|---|---|
-| Document loading | Done |
-| Chunking | Done |
-| Embeddings and local vector store (JSON) | Done |
-| Similarity search with score threshold | Done |
-| Answer generation with source grounding | Done |
-| Command-line interface (`src/ask.ts`) | Done |
-| Express API (`POST /ask`) | Planned |
+| Stage | Status  |
+|---|---------|
+| Document loading | Done    |
+| Chunking | Done    |
+| Embeddings and local vector store (JSON) | Done    |
+| Similarity search with score threshold | Done    |
+| Answer generation with source grounding | Done    |
+| Command-line interface (`src/ask.ts`) | Done    |
+| Express API (`POST /ask`) | Done    |
 | React front end (`client/`) | Planned |
 
 ## How it works

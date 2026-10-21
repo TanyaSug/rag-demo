@@ -1,0 +1,12 @@
+[
+  { "question": "Which screens does the app have?", "expectAnswer": true },
+  { "question": "What can I do on the Checklist Detail screen?", "expectAnswer": true },
+  { "question": "How do I copy someone else's checklist?", "expectAnswer": true },
+  { "question": "Can a checklist be private or public?", "expectAnswer": true },
+  { "question": "What is the My Assigned Items screen for?", "expectAnswer": true },
+  { "question": "What is the weather in Auckland tomorrow?", "expectAnswer": false },
+  { "question": "Who won the Rugby World Cup?", "expectAnswer": false },
+  { "question": "How do I bake sourdough bread?", "expectAnswer": false },
+  { "question": "What is the capital of France?", "expectAnswer": false },
+  { "question": "How much does the app cost per month?", "expectAnswer": false }
+]

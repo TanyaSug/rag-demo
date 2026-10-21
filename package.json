@@ -7,7 +7,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "ingest": "tsx src/index.ts",
-    "ask": "tsx src/ask.ts"
+    "ask": "tsx src/ask.ts",
+    "eval": "tsx src/evaluate.ts",
+    "server": "tsx src/server.ts"
+
   },
   "keywords": [],
   "author": "",

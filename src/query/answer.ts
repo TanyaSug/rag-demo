@@ -28,20 +28,24 @@ function cosineSimilarity(a: number[], b: number[]): number {
     return dot / (Math.sqrt(magA) * Math.sqrt(magB));
 }
 
-export async function answerQuestion(question: string, chunks: Chunk[], topN = 3) {
+export const MIN_SCORE = 0.3;
+
+export async function retrieve(question: string, chunks: Chunk[], topN = 3) {
     const embeddingRes = await getClient().embeddings.create({
         model: "text-embedding-3-small",
         input: question,
     });
     const queryVector = embeddingRes.data[0]?.embedding ?? [];
 
-    const MIN_SCORE = 0.3;
-
-    const top = chunks
+    return chunks
         .map((chunk) => ({ chunk, score: cosineSimilarity(queryVector, chunk.embedding) }))
         .sort((a, b) => b.score - a.score)
-        .slice(0, topN)
-        .filter((t) => t.score >= MIN_SCORE);
+        .slice(0, topN);
+}
+
+export async function answerQuestion(question: string, chunks: Chunk[], topN = 3) {
+    const ranked = await retrieve(question, chunks, topN);
+    const top = ranked.filter((t) => t.score >= MIN_SCORE);
 
     if (top.length === 0) {
         return {
@@ -61,7 +65,7 @@ export async function answerQuestion(question: string, chunks: Chunk[], topN = 3
                 content:
                     "Answer only using the provided context. If the answer is not in the context, say so. Always answer in English.",
             },
-            { role: "user", content: `Контекст:\n${context}\n\nВопрос: ${question}` },
+            { role: "user", content: `Context:\n${context}\n\nQuestion: ${question}` },
         ],
     });
 
