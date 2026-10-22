@@ -10,7 +10,6 @@
     "ask": "tsx src/ask.ts",
     "eval": "tsx src/evaluate.ts",
     "server": "tsx src/server.ts"
-
   },
   "keywords": [],
   "author": "",
@@ -22,6 +21,7 @@
     "openai": "^7.34.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^26.6.5",
     "ts-node": "^10.9.2",
